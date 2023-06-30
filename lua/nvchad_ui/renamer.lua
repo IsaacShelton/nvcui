@@ -7,7 +7,7 @@ M.open = function()
   local previousName = vim.fn.expand "<cword>" .. " "
 
   local win = require("plenary.popup").create("", {
-    title = "Renamer",
+    title = "Rename",
     style = "minimal",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     relative = "cursor",
