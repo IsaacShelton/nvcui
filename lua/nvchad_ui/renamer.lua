@@ -4,9 +4,9 @@
 local M = {}
 
 M.open = function()
-  local currName = "" -- vim.fn.expand "<cword>" .. " "
+  local currName = vim.fn.expand "<cword>" .. " "
 
-  local win = require("plenary.popup").create(currName, {
+  local win = require("plenary.popup").create("", {
     title = "Renamer",
     style = "minimal",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
@@ -18,6 +18,7 @@ M.open = function()
     height = 1,
     line = "cursor+2",
     col = "cursor-1",
+    previousName = currName,
   })
 
   local map_opts = { noremap = true, silent = true }
@@ -45,7 +46,8 @@ M.open = function()
   )
 end
 
-M.apply = function(curr, win)
+M.apply = function(_, win)
+  local curr = win.previousName
   local newName = vim.trim(vim.fn.getline ".")
   vim.api.nvim_win_close(win, true)
 
