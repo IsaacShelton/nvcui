@@ -4,7 +4,7 @@
 local M = {}
 
 M.open = function()
-  local currName = vim.fn.expand "<cword>" .. " "
+  local currName = "" -- vim.fn.expand "<cword>" .. " "
 
   local win = require("plenary.popup").create(currName, {
     title = "Renamer",
