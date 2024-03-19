@@ -164,7 +164,7 @@ end
 
 M.cursor_position = function()
   local left_sep = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
-  local left_sep_clock = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
+  local left_sep_clock = "%#St_NormalMode#" .. sep_l .. "%#St_pos_icon#" .. " "
 
   local current_line = fn.line "."
   local total_line = fn.line "$"
