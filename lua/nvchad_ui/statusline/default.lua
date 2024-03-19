@@ -174,7 +174,7 @@ M.cursor_position = function()
   text = (current_line == 1 and "Top") or text
   text = (current_line == total_line and "Bot") or text
 
-  return left_sep .. "%#St_pos_text#" .. " " .. text .. " " .. left_sep_clock .. "%#St_pos_text#" .. os.date("%I:%M") .. " "
+  return left_sep .. "%#St_pos_text#" .. " " .. text .. " " .. left_sep_clock .. "%#St_pos_text#" .. " " .. os.date("%I:%M") .. " "
   -- return left_sep .. "%#St_pos_text#" .. " " .. text .. " "
 end
 
